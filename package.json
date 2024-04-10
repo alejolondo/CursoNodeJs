@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alejolondo/CursoNodeJs#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   }
