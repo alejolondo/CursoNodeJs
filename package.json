@@ -1,0 +1,23 @@
+{
+  "name": "restserver",
+  "version": "1.0.0",
+  "description": "Curso NodJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejolondo/CursoNodeJs.git"
+  },
+  "author": "Alejandro Londoño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejolondo/CursoNodeJs/issues"
+  },
+  "homepage": "https://github.com/alejolondo/CursoNodeJs#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
