@@ -24,25 +24,25 @@ class Server {
 
     routes(){
         this.app.get('/api', (req, res) => {
-            res.json({
+            res.status(200).json({
                 msg: 'Hello World, GET'
             })
           })
 
           this.app.post('/api', (req, res) => {
-            res.json({
+            res.status(201).json({
                 msg: 'Hello World, POST'
             })
           })
 
           this.app.put('/api', (req, res) => {
-            res.json({
+            res.status(200).json({
                 msg: 'Hello World, PUT'
             })
           })
 
           this.app.delete('/api', (req, res) => {
-            res.json({
+            res.status(200).json({
                 msg: 'Hello World, DELETE'
             })
           })
