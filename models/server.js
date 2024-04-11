@@ -1,11 +1,13 @@
 const express = require('express')
 const cors = require('cors')
+const userRoutes = require('../routes/users.routes.js')
 
 class Server {
 
     constructor(){
         this.app =  express();
         this.port = process.env.PORT
+        this.usersPath = '/api/users'
 
         //Middlewares -> Funciones que siempre va a ejecutarse cuando levante mi servidor
         this.middlewares();
@@ -20,37 +22,21 @@ class Server {
 
     middlewares() {
 
-        //cors 
-        this.app.use(cors())
+        //CORS
+        this.app.use(cors());
+
+        //Lectura y parseo de body
+        this.app.use(express.json() );
         
         //Directorio publico 
         this.app.use(express.static('public'));
+
+
     }
 
     routes(){
-        this.app.get('/api', (req, res) => {
-            res.status(200).json({
-                msg: 'Hello World, GET'
-            })
-          })
-
-          this.app.post('/api', (req, res) => {
-            res.status(201).json({
-                msg: 'Hello World, POST'
-            })
-          })
-
-          this.app.put('/api', (req, res) => {
-            res.status(200).json({
-                msg: 'Hello World, PUT'
-            })
-          })
-
-          this.app.delete('/api', (req, res) => {
-            res.status(200).json({
-                msg: 'Hello World, DELETE'
-            })
-          })
+        
+        this.app.use(this.usersPath, userRoutes )
     }
 
     listen(){
