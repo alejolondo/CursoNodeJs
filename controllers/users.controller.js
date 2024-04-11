@@ -1,9 +1,14 @@
 const {response, request } = require('express')
 const { unsubscribe } = require('../routes/users.routes')
 
-const getUsers = (req, res) => {
+const getUsers = (req = request, res) => {
+
+    const {nombre = 'No name', correo } = req.query;
+    
     res.status(200).json({
-        msg: 'Hello World, GET - controlador'
+        msg: 'Hello World, GET - controlador',
+        nombre,
+        correo
     })
   }
 
@@ -19,8 +24,12 @@ const postUsers = (req, res) => {
   }
 
 const putUsers = (req, res) => {
+
+    const id = req.params.id
+
     res.status(200).json({
-        msg: 'Hello World, PUT - controlador '
+        msg: 'Hello World, PUT - controlador ',
+        id
     })
   }
 
