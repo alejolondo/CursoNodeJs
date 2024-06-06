@@ -1,5 +1,7 @@
 const {response, request } = require('express')
 const { unsubscribe } = require('../routes/users.routes')
+const Usuario = require('../models/usuario.js')
+
 
 const getUsers = (req = request, res) => {
 
@@ -12,14 +14,16 @@ const getUsers = (req = request, res) => {
     })
   }
 
-const postUsers = (req, res) => {
+const postUsers = async (req, res) => {
 
-    const { nombre, correo } = req.body;
+    const body = req.body;
+    const usuario = new Usuario( body );
 
+    await usuario.save();
+    
     res.status(201).json({
         msg: 'Hello World, POST - controlador',
-        nombre,
-        correo
+        usuario
     })
   }
 
