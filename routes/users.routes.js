@@ -7,7 +7,7 @@ const { esRolValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-
 const { getUsers,
         postUsers, 
         putUsers, 
-        deleteUsers} = require ('../controllers/users.controller');
+        deleteUsers} = require ('../controllers/users.controller.js');
 
 const router = Router();
 
